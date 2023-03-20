@@ -41,15 +41,6 @@
         label="课程分数"
         width="120">
     </el-table-column>
-    <el-table-column label="操作">
-      <template slot-scope="scope">
-        <el-button
-            size="mini"
-            type="danger"
-            @click="open(scope.row)">打分
-        </el-button>
-      </template>
-    </el-table-column>
   </el-table>
 
 
@@ -59,7 +50,7 @@
 
 <script>
 export default {
-  name: "scInfo",
+  name: "userSc",
 
   data() {
     return {
@@ -69,33 +60,11 @@ export default {
 
   created() {
     let _list = this;
-    axios.get("api/login/admin/getStudentScores.php").then(function (resp) {
+    var username = window.sessionStorage.getItem('username')
+    axios.get("api/login/admin/getStudentScoreByName.php?username=" + username).then(function (resp) {
       _list.tableData = resp.data;
     })
   },
-
-  methods: {
-    open(row) {
-      this.$prompt('请输入分数', '提示', {
-        confirmButtonText: '确定',
-        cancelButtonText: '取消',
-      }).then(({ value }) => {
-        var formData = new FormData();
-        formData.append('scid',row.scid);
-        formData.append('score',value);
-        axios.post('/api/login/admin/updateScore.php', formData);
-        this.$message({
-          type: 'success',
-          message: '你的打分是: ' + value
-        });
-      }).catch(() => {
-        this.$message({
-          type: 'info',
-          message: '取消输入'
-        });
-      });
-    }
-  }
 }
 </script>
 

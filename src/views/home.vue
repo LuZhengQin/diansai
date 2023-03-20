@@ -38,6 +38,23 @@
             <el-menu-item index="/course">课程管理</el-menu-item>
             <el-menu-item index="/scInfo">成绩管理</el-menu-item>
           </el-submenu>
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>通知</span>
+            </template>
+            <el-menu-item index="/addNews">发布通知</el-menu-item>
+            <el-menu-item index="/newsInfo">管理通知</el-menu-item>
+          </el-submenu>
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>设备</span>
+            </template>
+            <el-menu-item index="/deviceInfo">设备库存</el-menu-item>
+            <el-menu-item index="/userSc">申请记录</el-menu-item>
+            <el-menu-item index="/borrowInfo">已申请</el-menu-item>
+          </el-submenu>
         </el-menu>
       </el-aside>
       <!-- 右侧内容主题 -->

@@ -9,7 +9,15 @@ import userHome from "../views/userHome.vue";
 import userInfo from "../views/userInfo.vue";
 import Register from "../views/register.vue";
 import Course from "../views/course.vue";
-import ScInfo from '../views/scInfo.vue'
+import ScInfo from '../views/scInfo.vue';
+import userCourse from "../views/userCourse.vue";
+import userSc from "../views/userSc.vue";
+import newsInfo from "../views/newsInfo.vue";
+import addNews from "../views/addNews.vue";
+import DeviceInfo from "../views/deviceInfo.vue";
+import UserDeviceInfo from "../views/userDeviceInfo.vue";
+import UserBorrowInfo from "../views/userBorrowInfo.vue";
+import BorrowInfo from "../views/borrowInfo.vue";
 Vue.use(VueRouter)
 
 const routes = [
@@ -23,7 +31,13 @@ const routes = [
         name: 'userHome',
         component: userHome,
         redirect: '/userInfo',
-        children: [{path: '/userInfo', component: userInfo}]
+        children: [{path: '/userInfo', component: userInfo},
+            {path: '/userCourse', component: userCourse},
+            {path: '/userSc', component: userSc},
+            {path: '/newsInfo', component: newsInfo},
+            {path: '/userDeviceInfo', component: UserDeviceInfo},
+            {path: '/userBorrowInfo', component: UserBorrowInfo},
+        ]
     },
     {
         path: '/shenhe',
@@ -48,6 +62,10 @@ const routes = [
         children: [{path: '/baoming', component: Baoming},
             {path: '/course', component: Course},
             {path: '/scInfo', component: ScInfo},
+            {path: '/addNews', component: addNews},
+            {path: '/deviceInfo', component: DeviceInfo},
+            {path: '/borrowInfo', component: BorrowInfo},
+            {path: '/newsInfo', component: newsInfo},
         ]
     }
 ]

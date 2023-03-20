@@ -30,6 +30,42 @@
             </template>
             <el-menu-item index="userInfo">个人信息</el-menu-item>
           </el-submenu>
+
+          <el-submenu index="2">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>课程</span>
+            </template>
+            <el-menu-item index="/userCourse">课程选择</el-menu-item>
+            <el-menu-item index="/userSc">成绩查看</el-menu-item>
+          </el-submenu>
+
+          <el-submenu index="3">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>通知</span>
+            </template>
+            <el-menu-item index="/newsInfo">通知</el-menu-item>
+          </el-submenu>
+
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>设备</span>
+            </template>
+            <el-menu-item index="/userDeviceInfo">设备申请</el-menu-item>
+            <el-menu-item index="/userSc">申请进度查看</el-menu-item>
+            <el-menu-item index="/userBorrowInfo">已申请</el-menu-item>
+          </el-submenu>
+
+          <el-submenu index="4">
+            <template slot="title">
+              <i class="el-icon-location"></i>
+              <span>校友</span>
+            </template>
+            <el-menu-item index="/userCourse">课程选择</el-menu-item>
+            <el-menu-item index="/userSc">成绩查看</el-menu-item>
+          </el-submenu>
         </el-menu>
       </el-aside>
       <!-- 右侧内容主题 -->
