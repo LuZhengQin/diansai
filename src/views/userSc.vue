@@ -61,7 +61,7 @@ export default {
   created() {
     let _list = this;
     var username = window.sessionStorage.getItem('username')
-    axios.get("api/login/admin/getStudentScoreByName.php?username=" + username).then(function (resp) {
+    axios.get("api/php/getStudentScoreByName.php?username=" + username).then(function (resp) {
       _list.tableData = resp.data;
     })
   },

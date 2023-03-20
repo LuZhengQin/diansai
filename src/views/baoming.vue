@@ -70,7 +70,7 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-        axios.get("api/login/admin/deleteUser.php?user_id=" + row.user_id).then(function (resp) {
+        axios.get("api/php/deleteUser.php?user_id=" + row.user_id).then(function (resp) {
           if (resp.data.status == 200) {
             _this.$alert('删除成功', '提示', {
               confirmButtonText: '确定',
@@ -93,7 +93,7 @@ export default {
   },
   created() {
     let _list = this;
-    axios.get("api/login/admin/getUserList.php").then(function (resp) {
+    axios.get("api/php/getUserList.php").then(function (resp) {
       _list.tableData = resp.data;
     })
   },

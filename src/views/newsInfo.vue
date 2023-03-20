@@ -62,7 +62,7 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-        axios.get("api/login/admin/deleteNews.php?news_id=" + row.news_id).then(function (resp) {
+        axios.get("api/php/deleteNews.php?news_id=" + row.news_id).then(function (resp) {
           if (resp.data.status == 200) {
             _this.$alert('删除成功', '提示', {
               confirmButtonText: '确定',
@@ -85,7 +85,7 @@ export default {
   },
   created() {
     let _list = this;
-    axios.get("api/login/admin/getNewsList.php").then(function (resp) {
+    axios.get("api/php/getNewsList.php").then(function (resp) {
       _list.tableData = resp.data;
     })
   },

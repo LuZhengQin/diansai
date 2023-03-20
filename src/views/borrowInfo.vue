@@ -76,7 +76,7 @@ export default {
 
   created() {
     let _list = this;
-    axios.get("api/login/admin/getBorrowList.php").then(function (resp) {
+    axios.get("api/php/getBorrowList.php").then(function (resp) {
       _list.tableData = resp.data;
       _list.flag = resp.data.flag;
     })

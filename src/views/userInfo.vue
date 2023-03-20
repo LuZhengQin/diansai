@@ -34,7 +34,7 @@ export default {
   created() {
     let _this = this;
     let username = JSON.parse(sessionStorage.getItem("username"))
-    axios.get('api/login/admin/getUserByName.php?username=' + username).then(function (resp) {
+    axios.get('api/php/getUserByName.php?username=' + username).then(function (resp) {
       _this.form = resp.data;
     })
   },
@@ -55,7 +55,7 @@ export default {
     onSubmit() {
       let _this = this;
       console.log('submit!');
-      axios.post('/api/login/admin/updateUser.php', this.form).then(function (resp) {
+      axios.post('/api/php/updateUser.php', this.form).then(function (resp) {
         if (resp.status == 200) {
           _this.$alert('修改信息成功');
           _this.$router.push('/userHome');

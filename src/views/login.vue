@@ -67,7 +67,7 @@ export default {
         }
 
         axios
-            .post("api/login/admin/login.php", this.loginForm)
+            .post("api/php/login.php", this.loginForm)
             .then(res => {
               // console.log("输出response.data.status", res.data.status);
               if (res.data.status === 200) {

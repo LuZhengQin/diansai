@@ -69,7 +69,7 @@ export default {
 
   created() {
     let _list = this;
-    axios.get("api/login/admin/getStudentScores.php").then(function (resp) {
+    axios.get("api/php/getStudentScores.php").then(function (resp) {
       _list.tableData = resp.data;
     })
   },
@@ -83,7 +83,7 @@ export default {
         var formData = new FormData();
         formData.append('scid',row.scid);
         formData.append('score',value);
-        axios.post('/api/login/admin/updateScore.php', formData);
+        axios.post('/api/php/updateScore.php', formData);
         this.$message({
           type: 'success',
           message: '你的打分是: ' + value

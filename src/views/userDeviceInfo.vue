@@ -53,7 +53,7 @@ export default {
         var formData = new FormData();
         formData.append('deviceid',row.deviceid);
         formData.append('username',username);
-        axios.post("api/login/admin/applyDevice.php", formData).then(function (resp) {
+        axios.post("api/php/applyDevice.php", formData).then(function (resp) {
           if (resp.data.status == 200) {
             _this.$alert('申请成功', '提示', {
               confirmButtonText: '确定',

@@ -53,7 +53,7 @@ export default {
 
   created() {
     let _list = this;
-    axios.get("api/login/admin/getBorrowList.php").then(function (resp) {
+    axios.get("api/php/getBorrowList.php").then(function (resp) {
       _list.tableData = resp.data;
     })
   },
@@ -72,7 +72,7 @@ export default {
         cancelButtonText: '取消',
         type: 'warning'
       }).then(() => {
-        axios.get("api/login/admin/returnDevice.php?borrowId=", + row.borrowid).then(function (resp) {
+        axios.get("api/php/returnDevice.php?borrowId=", + row.borrowid).then(function (resp) {
           if (resp.data.status == 200) {
             _this.$alert('返还成功', '提示', {
               confirmButtonText: '确定',

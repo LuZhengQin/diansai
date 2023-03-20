@@ -7,7 +7,7 @@ module.exports = defineConfig({
     open: false,//值为 true的话，项目启动时自动打开到浏览器里边， false不会打开
     proxy:{
       '/api':{
-        target:'http://localhost/',//跨域请求的公共地址
+        target:'http://43.138.148.158/',//跨域请求的公共地址
         ws:false, //也可以忽略不写，不写不会影响跨域
         changeOrigin:true, //是否开启跨域，值为 true 就是开启， false 不开启
         pathRewrite:{

@@ -53,7 +53,7 @@ export default {
         var formData = new FormData();
         formData.append('cosid',row.cosid);
         formData.append('username',username);
-        axios.post("api/login/admin/insertSc.php", formData).then(function (resp) {
+        axios.post("api/php/insertSc.php", formData).then(function (resp) {
           if (resp.data.status == 200) {
             _this.$alert('选课成功', '提示', {
               confirmButtonText: '确定',

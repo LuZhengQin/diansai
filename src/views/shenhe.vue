@@ -54,7 +54,7 @@ export default {
     onSubmit() {
       let _this = this;
       console.log('submit!');
-      axios.post('/api/login/admin/shenhe.php', this.form).then(function (resp) {
+      axios.post('/api/php/shenhe.php', this.form).then(function (resp) {
         if (resp.status == 200) {
           _this.$alert('审核添加用户成功');
           _this.$router.push('/home');

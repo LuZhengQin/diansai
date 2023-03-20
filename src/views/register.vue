@@ -50,7 +50,7 @@ export default {
     onSubmit() {
       let _this = this;
       console.log('submit!');
-      axios.post('/api/login/admin/register.php', this.form).then(function (resp) {
+      axios.post('/api/php/register.php', this.form).then(function (resp) {
         if (resp.status == 200) {
           _this.$alert('修改信息成功');
           _this.$router.push('/login');
